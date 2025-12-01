@@ -1,0 +1,161 @@
+/* Property card hover effect */
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero section background */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Contact form focus styles */
+.contact-form input,
+.contact-form textarea {
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Mobile menu animation */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.mobile-menu.open {
+  max-height: 500px;
+}
+
+/* ===== DARK MODE STYLES ===== */
+
+/* Dark mode color scheme */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #1a1a1a;
+  color: #e5e7eb;
+}
+
+html.dark nav {
+  background-color: #1f2937;
+  border-bottom-color: #374151;
+}
+
+html.dark a {
+  color: inherit;
+}
+
+html.dark section {
+  background-color: inherit;
+}
+
+/* Dark mode background overrides */
+html.dark .bg-white {
+  background-color: #1f2937;
+}
+
+html.dark .bg-gray-50 {
+  background-color: #111827;
+}
+
+html.dark .bg-gray-100 {
+  background-color: #1f2937;
+}
+
+html.dark .bg-blue-600 {
+  background-color: #2563eb;
+}
+
+/* Dark mode text color overrides */
+html.dark .text-gray-800 {
+  color: #e5e7eb;
+}
+
+html.dark .text-gray-600 {
+  color: #d1d5db;
+}
+
+html.dark .text-gray-700 {
+  color: #e5e7eb;
+}
+
+html.dark .text-gray-900 {
+  color: #e5e7eb;
+}
+
+html.dark .text-gray-400 {
+  color: #9ca3af;
+}
+
+html.dark .text-gray-500 {
+  color: #6b7280;
+}
+
+/* Dark mode border overrides */
+html.dark .border-gray-300 {
+  border-color: #4b5563;
+}
+
+html.dark .border-transparent {
+  border-color: transparent;
+}
+
+/* Dark mode modal styles */
+html.dark .bg-gray-500 {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+html.dark #propertyModal .bg-white {
+  background-color: #1f2937;
+}
+
+html.dark .bg-gray-50 {
+  background-color: #111827;
+}
+
+/* Dark mode form styles */
+html.dark input,
+html.dark textarea {
+  background-color: #2d3748;
+  color: #e5e7eb;
+  border-color: #4b5563;
+}
+
+/* Dark mode card styles */
+html.dark .property-card {
+  background-color: #2d3748;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode button styles */
+html.dark button:not(.view-details) {
+  background-color: #2d3748;
+  color: #e5e7eb;
+}
+
+/* Theme toggle button styles */
+#theme-toggle,
+#theme-toggle-mobile {
+  background-color: transparent;
+}
+
+html.dark #theme-toggle,
+html.dark #theme-toggle-mobile {
+  background-color: transparent;
+  color: #9ca3af;
+}
