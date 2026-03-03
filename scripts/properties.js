@@ -88,8 +88,8 @@
         (obj["Status"] || "").toLowerCase().trim() === "rent"
           ? `RM ${obj["Price"]}/mo`
           : obj["Price"]
-          ? `RM ${obj["Price"]}`
-          : "N/A";
+            ? `RM ${obj["Price"]}`
+            : "N/A";
       props.push(obj);
     }
     return props;
@@ -98,7 +98,11 @@
   // Helper: get field value by name (case-insensitive, ignores non-alphanumeric)
   function getFieldValue(obj, desiredName) {
     if (!obj || !desiredName) return undefined;
-    const normalize = (s) => (s || "").toString().toLowerCase().replace(/[^a-z0-9]/g, "");
+    const normalize = (s) =>
+      (s || "")
+        .toString()
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "");
     const want = normalize(desiredName);
     for (const k of Object.keys(obj)) {
       if (normalize(k) === want) return obj[k];
@@ -119,7 +123,8 @@
       .map((s) => {
         if (s === "for sale" || s === "sale") return "sale";
         if (s === "for rent" || s === "rent" || s === "rental") return "rent";
-        if (s === "featured" || s === "home" || s === "homepage") return "featured";
+        if (s === "featured" || s === "home" || s === "homepage")
+          return "featured";
         return s;
       });
   }
@@ -146,12 +151,12 @@
       }">
         <div class="relative">
           <img src="${img}" alt="${(p["Name"] || "Property").replace(
-      /"/g,
-      ""
-    )}" class="w-full h-64 object-cover" />
+            /"/g,
+            "",
+          )}" class="w-full h-64 object-cover" />
           <div class="absolute top-4 right-4 ${statusClass} text-white px-3 py-1 rounded-full text-sm font-semibold">${
-      p["Status"] || ""
-    }</div>
+            p["Status"] || ""
+          }</div>
         </div>
         <div class="p-6">
           <h3 class="text-xl font-bold mb-2">${p["Name"] || ""}</h3>
@@ -181,7 +186,7 @@
       b.addEventListener("click", () => {
         modal.classList.add("hidden");
         document.body.classList.remove("overflow-hidden");
-      })
+      }),
     );
     modal.addEventListener("click", (e) => {
       if (e.target === modal) {
@@ -216,7 +221,7 @@
     const mainImage = modal.querySelector("#mainImage");
     if (p.images && p.images.length) mainImage.src = p.images[0];
     const thumbnails = modal.querySelectorAll(
-      "#propertyModal .grid.grid-cols-4 img"
+      "#propertyModal .grid.grid-cols-4 img",
     );
     thumbnails.forEach((imgEl, idx) => {
       if (p.images && p.images[idx]) {
@@ -240,18 +245,18 @@
     const filtered = props.filter(
       (p) =>
         (p["Status"] || "").toLowerCase().trim() ===
-        (status || "").toLowerCase().trim()
+        (status || "").toLowerCase().trim(),
     );
     // If the container itself is already a grid, populate it directly.
     container.innerHTML = "";
     let gridEl;
-    if (container.classList.contains('grid')) {
+    if (container.classList.contains("grid")) {
       gridEl = container;
       // ensure the expected responsive columns are present
-      gridEl.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8';
+      gridEl.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
     } else {
-      gridEl = document.createElement('div');
-      gridEl.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8';
+      gridEl = document.createElement("div");
+      gridEl.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
     }
     filtered.forEach((p) => {
       gridEl.innerHTML += createCardHTML(p);
@@ -343,28 +348,45 @@
     if (saleContainer) saleContainer.innerHTML = "";
 
     const rentalProperties = props.filter(
-      (p) => (p["Status"] || "").toLowerCase().trim() === "rent"
+      (p) => (p["Status"] || "").toLowerCase().trim() === "rent",
     );
     const saleProperties = props.filter(
-      (p) => (p["Status"] || "").toLowerCase().trim() === "sale"
+      (p) => (p["Status"] || "").toLowerCase().trim() === "sale",
     );
 
     // Determine home-page tags for each property
-    const featuredHome = props.filter((p) => getHomePageTags(p).includes("featured"));
-    const rentalHome = rentalProperties.filter((p) => getHomePageTags(p).includes("rent"));
-    const saleHome = saleProperties.filter((p) => getHomePageTags(p).includes("sale"));
+    const featuredHome = props.filter((p) =>
+      getHomePageTags(p).includes("featured"),
+    );
+    const rentalHome = rentalProperties.filter((p) =>
+      getHomePageTags(p).includes("rent"),
+    );
+    const saleHome = saleProperties.filter((p) =>
+      getHomePageTags(p).includes("sale"),
+    );
 
-    console.debug("Home-page counts -> featured:", featuredHome.length, "rent:", rentalHome.length, "sale:", saleHome.length);
+    console.debug(
+      "Home-page counts -> featured:",
+      featuredHome.length,
+      "rent:",
+      rentalHome.length,
+      "sale:",
+      saleHome.length,
+    );
 
     // Featured: show only properties explicitly marked as 'Featured'
     if (featuredContainer) {
       const featuredList = featuredHome.slice(0, 3);
-      if (featuredContainer.classList.contains('grid')) {
-        featuredContainer.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8';
-        featuredList.forEach((p) => (featuredContainer.innerHTML += createCardHTML(p)));
+      if (featuredContainer.classList.contains("grid")) {
+        featuredContainer.className =
+          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
+        featuredList.forEach(
+          (p) => (featuredContainer.innerHTML += createCardHTML(p)),
+        );
       } else {
-        const featured = document.createElement('div');
-        featured.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8';
+        const featured = document.createElement("div");
+        featured.className =
+          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
         featuredList.forEach((p) => (featured.innerHTML += createCardHTML(p)));
         featuredContainer.appendChild(featured);
       }
@@ -373,12 +395,13 @@
     // Rentals: show only rentals explicitly marked as 'Rent' on the Home Page
     if (rentalContainer) {
       const toShow = rentalHome;
-      if (rentalContainer.classList.contains('grid')) {
-        rentalContainer.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8';
+      if (rentalContainer.classList.contains("grid")) {
+        rentalContainer.className =
+          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
         toShow.forEach((p) => (rentalContainer.innerHTML += createCardHTML(p)));
       } else {
-        const grid = document.createElement('div');
-        grid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8';
+        const grid = document.createElement("div");
+        grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
         toShow.forEach((p) => (grid.innerHTML += createCardHTML(p)));
         rentalContainer.appendChild(grid);
       }
@@ -387,12 +410,13 @@
     // Sales: show only sales explicitly marked as 'Sale' on the Home Page
     if (saleContainer) {
       const toShow = saleHome;
-      if (saleContainer.classList.contains('grid')) {
-        saleContainer.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8';
+      if (saleContainer.classList.contains("grid")) {
+        saleContainer.className =
+          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
         toShow.forEach((p) => (saleContainer.innerHTML += createCardHTML(p)));
       } else {
-        const grid = document.createElement('div');
-        grid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8';
+        const grid = document.createElement("div");
+        grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
         toShow.forEach((p) => (grid.innerHTML += createCardHTML(p)));
         saleContainer.appendChild(grid);
       }
@@ -437,7 +461,9 @@
     // Theme toggle
     function initThemeToggle() {
       const themeToggleBtn = document.getElementById("theme-toggle");
-      const themeToggleMobileBtn = document.getElementById("theme-toggle-mobile");
+      const themeToggleMobileBtn = document.getElementById(
+        "theme-toggle-mobile",
+      );
       const html = document.documentElement;
       const savedTheme = localStorage.getItem("theme") || "light";
 
@@ -454,7 +480,8 @@
           themeToggleBtn.querySelector("i").className = `fas ${icon}`;
         }
         if (themeToggleMobileBtn) {
-          themeToggleMobileBtn.querySelector("i").className = `fas ${icon} text-xl`;
+          themeToggleMobileBtn.querySelector("i").className =
+            `fas ${icon} text-xl`;
         }
       };
 
@@ -468,7 +495,8 @@
       };
 
       if (themeToggleBtn) themeToggleBtn.addEventListener("click", toggleTheme);
-      if (themeToggleMobileBtn) themeToggleMobileBtn.addEventListener("click", toggleTheme);
+      if (themeToggleMobileBtn)
+        themeToggleMobileBtn.addEventListener("click", toggleTheme);
     }
 
     initThemeToggle();
@@ -477,45 +505,45 @@
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
         // allow normal behavior for full links
-        const href = this.getAttribute('href');
-        if (!href || href === '#') return;
+        const href = this.getAttribute("href");
+        if (!href || href === "#") return;
         // if href points to another page anchor (starts with / or http), let the browser handle it
-        if (href.startsWith('http') || href.startsWith('/')) return;
+        if (href.startsWith("http") || href.startsWith("/")) return;
 
         e.preventDefault();
         const targetId = href;
         const targetElement = document.querySelector(targetId);
-        if (targetElement) targetElement.scrollIntoView({ behavior: 'smooth' });
-        if (mobileMenu && mobileMenu.classList.contains('open')) mobileMenu.classList.remove('open');
+        if (targetElement) targetElement.scrollIntoView({behavior: "smooth"});
+        if (mobileMenu && mobileMenu.classList.contains("open"))
+          mobileMenu.classList.remove("open");
       });
     });
 
-    // Contact form demo handler (if present)
     const contactForm = document.querySelector(".contact-form");
     if (contactForm) {
-      contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        alert("Thank you for your message! We will contact you soon.");
-        contactForm.reset();
-      });
+      contactForm.addEventListener("submit", () => {});
     }
   }
 
   // Auto initialize UI and optionally render index page when this script loads
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     try {
       initSiteUI();
     } catch (err) {
-      console.warn('initSiteUI error', err);
+      console.warn("initSiteUI error", err);
     }
 
     // If this looks like the index page (has featured container and both sections), render it
-    const featuredContainer = document.querySelector('.py-16.bg-white .grid');
-    const rentalContainer = document.querySelector('#for-rent .grid');
-    const saleContainer = document.querySelector('#for-sale .grid');
+    const featuredContainer = document.querySelector(".py-16.bg-white .grid");
+    const rentalContainer = document.querySelector("#for-rent .grid");
+    const saleContainer = document.querySelector("#for-sale .grid");
     if (featuredContainer || (rentalContainer && saleContainer)) {
       if (window.renderIndexPage) {
-        try { window.renderIndexPage(); } catch (e) { console.warn('renderIndexPage failed', e); }
+        try {
+          window.renderIndexPage();
+        } catch (e) {
+          console.warn("renderIndexPage failed", e);
+        }
       }
     }
   });
