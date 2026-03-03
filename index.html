@@ -1,830 +1,4 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Space | Industrial & Commercial Real Estate</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .property-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        .contact-form input, .contact-form textarea {
-            transition: all 0.3s ease;
-        }
-        .contact-form input:focus, .contact-form textarea:focus {
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
-        }
-        .mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .mobile-menu.open {
-            max-height: 500px;
-        }
-    </style>
-</head>
-<body class="font-sans bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <a href="#" class="text-2xl font-bold text-blue-600 flex items-center">
-                        <i class="fas fa-warehouse mr-2"></i>
-                        Strategic Space
-                    </a>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
-                    <a href="#for-rent" class="text-gray-800 hover:text-blue-600 font-medium">For Rent</a>
-                    <a href="#for-sale" class="text-gray-800 hover:text-blue-600 font-medium">For Sale</a>
-                    <a href="#about" class="text-gray-800 hover:text-blue-600 font-medium">About Us</a>
-                    <a href="#contact" class="text-gray-800 hover:text-blue-600 font-medium">Contact Us</a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
-                <div class="px-2 pt-2 pb-4 space-y-2">
-                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Home</a>
-                    <a href="#for-rent" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">For Rent</a>
-                    <a href="#for-sale" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">For Sale</a>
-                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">About Us</a>
-                    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section text-white py-20 md:py-32">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">Premium Industrial & Commercial Spaces</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Find the perfect warehouse, factory, or shoplot for your business needs</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#for-rent" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-                    Browse Rentals
-                </a>
-                <a href="#for-sale" class="bg-transparent hover:bg-white hover:text-blue-800 text-white font-bold py-3 px-6 border-2 border-white rounded-lg transition duration-300">
-                    Properties for Sale
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Properties -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Featured Properties</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Property 1 -->
-                <div class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Industrial Warehouse" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            For Rent
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Industrial Warehouse - Shah Alam</h3>
-                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>Shah Alam Industrial Zone</p>
-                        <div class="flex justify-between mb-4">
-                            <span class="text-gray-700"><i class="fas fa-ruler-combined text-blue-500 mr-2"></i>10,000 sq.ft.</span>
-                            <span class="text-gray-700"><i class="fas fa-door-open text-blue-500 mr-2"></i>3 Loading Bays</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-blue-600">RM 8,500/mo</span>
-                            <button onclick="openModal('warehouse-shah-alam')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-     
-                
-
-                
-                <!-- Property 2 -->
-                <div class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Commercial Shoplot" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            For Sale
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Commercial Shoplot - Bangsar</h3>
-                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>Bangsar Commercial District</p>
-                        <div class="flex justify-between mb-4">
-                            <span class="text-gray-700"><i class="fas fa-ruler-combined text-blue-500 mr-2"></i>3,500 sq.ft.</span>
-                            <span class="text-gray-700"><i class="fas fa-building text-blue-500 mr-2"></i>2 Floors</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-green-600">RM 2.8M</span>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Property 3 -->
-                <div class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1601760562234-9814eea6663a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Manufacturing Facility" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            For Rent
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Manufacturing Facility - Klang</h3>
-                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>Klang Industrial Park</p>
-                        <div class="flex justify-between mb-4">
-                            <span class="text-gray-700"><i class="fas fa-ruler-combined text-blue-500 mr-2"></i>25,000 sq.ft.</span>
-                            <span class="text-gray-700"><i class="fas fa-hard-hat text-blue-500 mr-2"></i>Heavy Industrial</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-blue-600">RM 15,000/mo</span>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- For Rent Section -->
-    <section id="for-rent" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4">Properties For Rent</h2>
-            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Browse our selection of premium industrial and commercial spaces available for lease</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Rental Property 1 -->
-                <div class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1600566752227-8d4f77544f49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Warehouse for Rent" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            For Rent
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Modern Warehouse - Subang Jaya</h3>
-                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>Subang Jaya Industrial Park</p>
-                        <div class="flex justify-between mb-4">
-                            <span class="text-gray-700"><i class="fas fa-ruler-combined text-blue-500 mr-2"></i>8,000 sq.ft.</span>
-                            <span class="text-gray-700"><i class="fas fa-parking text-blue-500 mr-2"></i>10 Parking Spaces</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-blue-600">RM 7,200/mo</span>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Rental Property 2 -->
-                <div class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1581093450021-33a9d4e6b1c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Factory for Rent" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            For Rent
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Light Industrial Factory - Puchong</h3>
-                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>Puchong Industrial Area</p>
-                        <div class="flex justify-between mb-4">
-                            <span class="text-gray-700"><i class="fas fa-ruler-combined text-blue-500 mr-2"></i>12,500 sq.ft.</span>
-                            <span class="text-gray-700"><i class="fas fa-truck text-blue-500 mr-2"></i>2 Loading Docks</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-blue-600">RM 9,800/mo</span>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Rental Property 3 -->
-                <div class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Retail Space for Rent" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            For Rent
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Retail Space - Mont Kiara</h3>
-                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>Mont Kiara Commercial Hub</p>
-                        <div class="flex justify-between mb-4">
-                            <span class="text-gray-700"><i class="fas fa-ruler-combined text-blue-500 mr-2"></i>2,800 sq.ft.</span>
-                            <span class="text-gray-700"><i class="fas fa-users text-blue-500 mr-2"></i>High Foot Traffic</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-blue-600">RM 6,500/mo</span>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-flex items-center">
-                    View All Rental Properties <i class="fas fa-arrow-right ml-2"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- For Sale Section -->
-    <section id="for-sale" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4">Properties For Sale</h2>
-            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Own your commercial or industrial space with our premium properties available for purchase</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Sale Property 1 -->
-                <div class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Industrial Land for Sale" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            For Sale
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Industrial Land - Rawang</h3>
-                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>Rawang Industrial Zone</p>
-                        <div class="flex justify-between mb-4">
-                            <span class="text-gray-700"><i class="fas fa-ruler-combined text-blue-500 mr-2"></i>1.5 Acres</span>
-                            <span class="text-gray-700"><i class="fas fa-road text-blue-500 mr-2"></i>Main Road Frontage</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-green-600">RM 4.2M</span>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Sale Property 2 -->
-                <div class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Commercial Building for Sale" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            For Sale
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Commercial Building - Petaling Jaya</h3>
-                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>SS2 Commercial Area</p>
-                        <div class="flex justify-between mb-4">
-                            <span class="text-gray-700"><i class="fas fa-ruler-combined text-blue-500 mr-2"></i>6,500 sq.ft.</span>
-                            <span class="text-gray-700"><i class="fas fa-building text-blue-500 mr-2"></i>3 Floors</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-green-600">RM 3.5M</span>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Sale Property 3 -->
-                <div class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Warehouse for Sale" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            For Sale
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Warehouse Complex - Port Klang</h3>
-                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>Port Klang Free Zone</p>
-                        <div class="flex justify-between mb-4">
-                            <span class="text-gray-700"><i class="fas fa-ruler-combined text-blue-500 mr-2"></i>32,000 sq.ft.</span>
-                            <span class="text-gray-700"><i class="fas fa-ship text-blue-500 mr-2"></i>Port Access</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-green-600">RM 8.9M</span>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-flex items-center">
-                    View All Properties for Sale <i class="fas fa-arrow-right ml-2"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
-                    <h2 class="text-3xl font-bold mb-6">About Strategic Space</h2>
-                    <p class="text-gray-700 mb-6">
-                        Founded in 2005, Strategic Space has established itself as a leading commercial and industrial real estate specialist in Malaysia. With over 18 years of experience, we've helped hundreds of businesses find their ideal operational spaces.
-                    </p>
-                    <p class="text-gray-700 mb-6">
-                        Our team of dedicated professionals brings deep market knowledge, strong negotiation skills, and a commitment to client satisfaction to every transaction. We understand that your business space is more than just real estate - it's a critical component of your operational success.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <div class="bg-white p-4 rounded-lg shadow-sm flex-1 min-w-[200px]">
-                            <h3 class="text-blue-600 text-4xl font-bold mb-2">18+</h3>
-                            <p class="text-gray-700">Years Experience</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm flex-1 min-w-[200px]">
-                            <h3 class="text-blue-600 text-4xl font-bold mb-2">500+</h3>
-                            <p class="text-gray-700">Properties Managed</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm flex-1 min-w-[200px]">
-                            <h3 class="text-blue-600 text-4xl font-bold mb-2">95%</h3>
-                            <p class="text-gray-700">Client Satisfaction</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-16 bg-blue-600 text-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center text-xl font-bold mr-4">JD</div>
-                        <div>
-                            <h4 class="font-bold">John Doe</h4>
-                            <p class="text-blue-200">Manufacturing Business Owner</p>
-                        </div>
-                    </div>
-                    <p class="italic">"PrimeSpace helped us find the perfect factory space in Klang that met all our requirements. Their team was professional, knowledgeable, and negotiated excellent terms for our lease."</p>
-                    <div class="flex mt-4 text-yellow-300">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center text-xl font-bold mr-4">SR</div>
-                        <div>
-                            <h4 class="font-bold">Sarah Rahman</h4>
-                            <p class="text-blue-200">Retail Chain Operator</p>
-                        </div>
-                    </div>
-                    <p class="italic">"We've worked with PrimeSpace for three of our retail locations. They understand our business needs and always find us spaces in prime locations with the right foot traffic."</p>
-                    <div class="flex mt-4 text-yellow-300">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center text-xl font-bold mr-4">ML</div>
-                        <div>
-                            <h4 class="font-bold">Michael Lee</h4>
-                            <p class="text-blue-200">Logistics Company CEO</p>
-                        </div>
-                    </div>
-                    <p class="italic">"The warehouse we purchased through PrimeSpace has been instrumental in scaling our operations. Their due diligence process saved us from potential zoning issues we wouldn't have spotted."</p>
-                    <div class="flex mt-4 text-yellow-300">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Us Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
-            
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
-                    <h3 class="text-xl font-bold mb-6">Get In Touch</h3>
-                    <form class="contact-form space-y-6">
-                        <div>
-                            <label for="name" class="block text-gray-700 mb-2">Your Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-700 mb-2">Email Address</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <div>
-                            <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
-                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <div>
-                            <label for="interest" class="block text-gray-700 mb-2">I'm interested in</label>
-                            <select id="interest" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <option value="">Select an option</option>
-                                <option value="rent">Properties for Rent</option>
-                                <option value="sale">Properties for Sale</option>
-                                <option value="both">Both Rent and Sale</option>
-                                <option value="other">Other Inquiry</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="message" class="block text-gray-700 mb-2">Your Message</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                        </div>
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 w-full">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-                
-                <div class="lg:w-1/2">
-                    <h3 class="text-xl font-bold mb-6">Our Office</h3>
-                    <div class="bg-gray-100 p-6 rounded-lg mb-8">
-                        <div class="flex items-start mb-4">
-                            <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-4"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Headquarters</h4>
-                                <p class="text-gray-700">Level 23, Menara PrimeSpace<br>8, Jalan PJS 8/15<br>46150 Petaling Jaya<br>Selangor, Malaysia</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start mb-4">
-                            <i class="fas fa-phone-alt text-blue-600 mt-1 mr-4"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Phone</h4>
-                                <p class="text-gray-700">+603 1234 5678</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-envelope text-blue-600 mt-1 mr-4"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Email</h4>
-                                <p class="text-gray-700">info@primespace.com.my</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gray-100 p-6 rounded-lg">
-                        <h4 class="font-bold text-gray-800 mb-4">Business Hours</h4>
-                        <div class="space-y-2">
-                            <div class="flex justify-between">
-                                <span class="text-gray-700">Monday - Friday</span>
-                                <span class="font-medium">9:00 AM - 6:00 PM</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-700">Saturday</span>
-                                <span class="font-medium">10:00 AM - 3:00 PM</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-700">Sunday</span>
-                                <span class="font-medium">Closed</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
-                        <div class="flex space-x-4">
-                            <a href="#" class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition duration-300">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-700 transition duration-300">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="bg-blue-700 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-800 transition duration-300">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4 flex items-center">
-                        <i class="fas fa-warehouse mr-2"></i> PrimeSpace
-                    </h3>
-                    <p class="text-gray-400">Your trusted partner for industrial and commercial real estate solutions since 2005.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
-                        <li><a href="#for-rent" class="text-gray-400 hover:text-white transition duration-300">For Rent</a></li>
-                        <li><a href="#for-sale" class="text-gray-400 hover:text-white transition duration-300">For Sale</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Property Types</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Warehouses</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Factories</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Shoplots</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Commercial Buildings</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Industrial Land</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Newsletter</h4>
-                    <p class="text-gray-400 mb-4">Subscribe to get updates on new properties and market insights.</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg transition duration-300">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 PrimeSpace Properties. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Property Details Modal -->
-    <div id="propertyModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
-        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <!-- Background overlay -->
-            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
-                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-            </div>
-
-            <!-- Modal content -->
-            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
-                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <div class="sm:flex sm:items-start">
-                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
-                            <div class="flex justify-between items-start">
-                                <h3 class="text-2xl leading-6 font-bold text-gray-900 mb-4" id="modal-title">
-                                    Property Details
-                                </h3>
-                                <button id="closeModal" class="text-gray-400 hover:text-gray-500">
-                                    <i class="fas fa-times text-2xl"></i>
-                                </button>
-                            </div>
-                            
-                            <!-- Image Gallery -->
-                            <div class="mb-6">
-                                <div class="relative h-64 md:h-96 bg-gray-100 rounded-lg overflow-hidden mb-4">
-                                    <img id="mainImage" src="" alt="Property Image" class="w-full h-full object-cover">
-                                </div>
-                                <div class="grid grid-cols-4 gap-2">
-                                    <div class="cursor-pointer">
-                                        <img src="" alt="Thumbnail" class="w-full h-20 object-cover rounded" onclick="changeMainImage(this)">
-                                    </div>
-                                    <div class="cursor-pointer">
-                                        <img src="" alt="Thumbnail" class="w-full h-20 object-cover rounded" onclick="changeMainImage(this)">
-                                    </div>
-                                    <div class="cursor-pointer">
-                                        <img src="" alt="Thumbnail" class="w-full h-20 object-cover rounded" onclick="changeMainImage(this)">
-                                    </div>
-                                    <div class="cursor-pointer">
-                                        <img src="" alt="Thumbnail" class="w-full h-20 object-cover rounded" onclick="changeMainImage(this)">
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Property Details -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <h4 class="text-xl font-bold mb-2" id="propertyTitle"></h4>
-                                    <p class="text-gray-600 mb-4" id="propertyLocation"></p>
-                                    <div class="space-y-2">
-                                        <p class="text-gray-700"><span class="font-semibold">Price:</span> <span id="propertyPrice"></span></p>
-                                        <p class="text-gray-700"><span class="font-semibold">Size:</span> <span id="propertySize"></span></p>
-                                        <p class="text-gray-700"><span class="font-semibold">Type:</span> <span id="propertyType"></span></p>
-                                        <p class="text-gray-700"><span class="font-semibold">Status:</span> <span id="propertyStatus"></span></p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4 class="text-xl font-bold mb-2">Description</h4>
-                                    <p class="text-gray-700 mb-4" id="propertyDescription">
-                                        This premium industrial space features high ceilings, ample loading docks, and modern facilities. 
-                                        Located in a prime industrial zone with excellent transportation links. 
-                                        Suitable for manufacturing, warehousing, or logistics operations.
-                                    </p>
-                                    <h4 class="text-xl font-bold mb-2">Features</h4>
-                                    <ul class="list-disc list-inside text-gray-700 space-y-1" id="propertyFeatures">
-                                        <li>24/7 Security</li>
-                                        <li>Ample Parking</li>
-                                        <li>Loading Docks</li>
-                                        <li>High Ceilings</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm">
-                        Contact Agent
-                    </button>
-                    <button id="closeModalBtn" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
-                        Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Property data for the modal
-        const properties = {
-            'warehouse-shah-alam': {
-                title: 'Industrial Warehouse - Shah Alam',
-                location: 'Shah Alam Industrial Zone',
-                price: 'RM 8,500/mo',
-                size: '10,000 sq.ft.',
-                type: 'Warehouse',
-                status: 'For Rent',
-                description: 'This modern warehouse features high ceilings, ample parking, and three loading bays. Perfect for logistics and storage businesses.',
-                features: [
-                    '10,000 sq.ft. of space',
-                    '3 Loading bays',
-                    '24/7 Security',
-                    'Ample parking',
-                    'High ceilings (8m)',
-                    'Office space included'
-                ],
-                images: [
-                    'https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-                    'https://images.unsplash.com/photo-1600566752227-8d4f77544f49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-                    'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-                    'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
-                ]
-            },
-            // Add more properties as needed
-        };
-
-        // Modal functionality
-        const modal = document.getElementById('propertyModal');
-        const closeModal = document.getElementById('closeModal');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-
-        function openModal(propertyId) {
-            const property = properties[propertyId];
-            
-            // Set property details
-            document.getElementById('propertyTitle').textContent = property.title;
-            document.getElementById('propertyLocation').textContent = property.location;
-            document.getElementById('propertyPrice').textContent = property.price;
-            document.getElementById('propertySize').textContent = property.size;
-            document.getElementById('propertyType').textContent = property.type;
-            document.getElementById('propertyStatus').textContent = property.status;
-            document.getElementById('propertyDescription').textContent = property.description;
-            
-            // Set features
-            const featuresList = document.getElementById('propertyFeatures');
-            featuresList.innerHTML = '';
-            property.features.forEach(feature => {
-                const li = document.createElement('li');
-                li.textContent = feature;
-                featuresList.appendChild(li);
-            });
-            
-            // Set images
-            const mainImage = document.getElementById('mainImage');
-            mainImage.src = property.images[0];
-            
-            const thumbnails = document.querySelectorAll('#propertyModal .grid.grid-cols-4 img');
-            thumbnails.forEach((img, index) => {
-                if (property.images[index]) {
-                    img.src = property.images[index];
-                    img.parentElement.style.display = 'block';
-                } else {
-                    img.parentElement.style.display = 'none';
-                }
-            });
-            
-            modal.classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
-        }
-
-        function changeMainImage(imgElement) {
-            document.getElementById('mainImage').src = imgElement.src;
-        }
-
-        function closeModalFunc() {
-            modal.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-        }
-
-        closeModal.addEventListener('click', closeModalFunc);
-        closeModalBtn.addEventListener('click', closeModalFunc);
-
-        // Close modal when clicking outside
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModalFunc();
-            }
-        });
-
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                // Close mobile menu if open
-                if (mobileMenu.classList.contains('open')) {
-                    mobileMenu.classList.remove('open');
-                }
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Form submission (demo only)
-        const contactForm = document.querySelector('.contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thank you for your message! We will contact you soon.');
-                contactForm.reset();
-            });
-        }
-    </script>
-</body>
-</html>
-=======
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -1004,7 +178,8 @@
         </div>
 
         <div class="text-center mt-12">
-          <button onclick="window.location.href='/for-rent.html'"
+          <button
+            onclick="window.location.href = '/for-rent.html'"
             class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-flex items-center"
           >
             View All Rental Properties <i class="fas fa-arrow-right ml-2"></i>
@@ -1027,7 +202,8 @@
         </div>
 
         <div class="text-center mt-12">
-          <button onclick="window.location.href='/for-sale.html'"
+          <button
+            onclick="window.location.href = '/for-sale.html'"
             class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-flex items-center"
           >
             View All Properties for Sale <i class="fas fa-arrow-right ml-2"></i>
@@ -1039,8 +215,8 @@
     <!-- MARK:About Us Section -->
     <section id="about" class="py-16 bg-gray-100">
       <div class="container mx-auto px-4">
-        <div class="flex flex-col lg:flex-row items-center">
-          <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+        <div class="flex flex-col items-center text-center">
+          <div class="max-w-3xl w-full mb-12">
             <h2 class="text-3xl font-bold mb-6">About Strategic Space</h2>
             <p class="text-gray-700 mb-6">
               Founded in 2005, Strategic Space has established itself as a
@@ -1055,7 +231,7 @@
               more than just real estate - it's a critical component of your
               operational success.
             </p>
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-wrap justify-center gap-4">
               <div
                 class="bg-white p-4 rounded-lg shadow-sm flex-1 min-w-[200px]"
               >
@@ -1181,7 +357,11 @@
         <div class="flex flex-col lg:flex-row gap-12">
           <div class="lg:w-1/2">
             <h3 class="text-xl font-bold mb-6">Get In Touch</h3>
-            <form class="contact-form space-y-6">
+            <form
+              class="contact-form space-y-6"
+              action="https://formspree.io/f/mjgedazz"
+              method="POST"
+            >
               <div>
                 <label for="name" class="block text-gray-700 mb-2"
                   >Your Name</label
@@ -1189,6 +369,7 @@
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -1199,6 +380,7 @@
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -1209,6 +391,7 @@
                 <input
                   type="tel"
                   id="phone"
+                  name="phone"
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -1218,6 +401,7 @@
                 >
                 <select
                   id="interest"
+                  name="interest"
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   <option value>Select an option</option>
@@ -1233,6 +417,7 @@
                 >
                 <textarea
                   id="message"
+                  name="message"
                   rows="4"
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 ></textarea>
@@ -1380,65 +565,7 @@
               </li>
             </ul>
           </div>
-          <div>
-            <h4 class="font-bold mb-4">Property Types</h4>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition duration-300"
-                  >Warehouses</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition duration-300"
-                  >Factories</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition duration-300"
-                  >Shoplots</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition duration-300"
-                  >Commercial Buildings</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition duration-300"
-                  >Industrial Land</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold mb-4">Newsletter</h4>
-            <p class="text-gray-400 mb-4">
-              Subscribe to get updates on new properties and market insights.
-            </p>
-            <form class="flex">
-              <input
-                type="email"
-                placeholder="Your email"
-                class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full"
-              />
-              <button
-                type="submit"
-                class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg transition duration-300"
-              >
-                <i class="fas fa-paper-plane"></i>
-              </button>
-            </form>
-          </div>
+
         </div>
         <div
           class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
@@ -1596,4 +723,3 @@
     </div>
   </body>
 </html>
->>>>>>> master
